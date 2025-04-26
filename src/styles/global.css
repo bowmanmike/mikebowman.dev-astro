@@ -1,1 +1,49 @@
+@import url('../assets/fonts/stylesheet.css');
+
+@theme {
+  --font-sans: 'Nunito', sans-serif;
+
+  --color-sage: #a8b5a4;
+  --color-sage-50: #dae7d6;
+  --color-sage-100: #d0ddcc;
+  --color-sage-200: #c6d3c2;
+  --color-sage-300: #bcc9b8;
+  --color-sage-400: #b2bfae;
+  --color-sage-500: #a8b5a4;
+  --color-sage-600: #9eab9a;
+  --color-sage-700: #94a190;
+  --color-sage-800: #8a9786;
+  --color-sage-900: #808d7c;
+}
+
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
+}
+
+html {
+  overflow-y: scroll;
+  @apply font-sans;
+  @apply text-lg;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: all 1s ease-out;
+}

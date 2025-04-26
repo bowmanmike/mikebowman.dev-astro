@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css";
+import IndexContainer from "../components/IndexContainer.tsx";
 ---
 
 <html lang="en">
@@ -10,7 +11,29 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="mx-auto max-w-6xl text-gray-700">
+		<main class="my-4 mx-auto max-w-6xl">
+			<IndexContainer>
+				<h2 class="border-sage mb-4 max-w-max border-b-4 pr-8 text-2xl">
+					Hi! I'm Mike
+				</h2>
+				<p>
+					I'm a software developer based in Toronto, currently working at{" "}
+					<a href="https://rbc.com">RBC</a>.
+				</p>
+				<p>
+					I have {new Date().getFullYear() - 2016}+ years of experience as a
+					Full-Stack Developer. I've worked with a wide variety of modern web
+					technologies, as seen below. I have worked in companies of all sizes,
+					from a tiny real-estate startup, to a mid-size media company, all the
+					way to a large Silicon Valley B2B company, and a globally-significant
+					Canadian bank.
+				</p>
+				<p>
+					I am passionate about clean code, testing, new technology, and cold brew
+					coffee.
+				</p>
+			</IndexContainer>
+		</main>
 	</body>
 </html>
