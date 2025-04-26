@@ -1,0 +1,15 @@
+---
+const { methodName, href, text } = Astro.props;
+---
+
+<li class="m-4">
+  <a href={href}>
+    <div
+      class="bg-sage mx-auto flex w-full items-center justify-center border border-gray-400 p-2 shadow-lg md:w-1/2"
+    >
+      <slot />
+      {text}
+    </div>
+    <p class="sr-only">{methodName}</p>
+  </a>
+</li>

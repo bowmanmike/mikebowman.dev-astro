@@ -1,6 +1,10 @@
 ---
 import "../styles/global.css";
 import IndexContainer from "../components/IndexContainer.astro";
+import { Image } from "astro:assets";
+import headshot from "../assets/images/mike-headshot-cropped.png";
+import Contact from "../components/Contact.astro";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -12,14 +16,23 @@ import IndexContainer from "../components/IndexContainer.astro";
 		<title>Astro</title>
 	</head>
 	<body class="mx-auto max-w-6xl text-gray-700">
-		<main class="my-4 mx-auto max-w-6xl">
+			<Header />
+		<main class="mx-auto my-4 max-w-6xl">
+			<div class="mb-8 grid lg:grid-cols-2">
+				<Image
+					src={headshot}
+					alt="Mike Bowman Headshot"
+					class="mx-auto my-8 max-w-xs rounded-full shadow-lg sm:max-w-sm"
+				/>
+				<Contact />
+			</div>
 			<IndexContainer>
 				<h2 class="border-sage mb-4 max-w-max border-b-4 pr-8 text-2xl">
 					Hi! I'm Mike
 				</h2>
 				<p>
 					I'm a software developer based in Toronto, currently working at{" "}
-					<a href="https://rbc.com">RBC</a>.
+					<a href="https://testdouble.com/">TestDouble</a>.
 				</p>
 				<p>
 					I have {new Date().getFullYear() - 2016}+ years of experience as a
@@ -30,8 +43,8 @@ import IndexContainer from "../components/IndexContainer.astro";
 					Canadian bank.
 				</p>
 				<p>
-					I am passionate about clean code, testing, new technology, and cold brew
-					coffee.
+					I am passionate about clean code, testing, new technology, and cold
+					brew coffee.
 				</p>
 			</IndexContainer>
 		</main>
