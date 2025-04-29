@@ -16,13 +16,14 @@ import Header from "../components/Header.astro";
 		<title>Astro</title>
 	</head>
 	<body class="mx-auto max-w-6xl text-gray-700">
-			<Header />
+		<Header />
 		<main class="mx-auto my-4 max-w-6xl">
 			<div class="mb-8 grid lg:grid-cols-2">
 				<Image
 					src={headshot}
 					alt="Mike Bowman Headshot"
 					class="mx-auto my-8 max-w-xs rounded-full shadow-lg sm:max-w-sm"
+					loading="eager"
 				/>
 				<Contact />
 			</div>
