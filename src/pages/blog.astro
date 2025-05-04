@@ -1,8 +1,17 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { generateExcerpt } from '../utils/excerpt.ts';
 
 const posts = await getCollection('blog');
+
+// Generate excerpts for each post
+const postsWithExcerpts = await Promise.all(
+  posts.map(async (post) => ({
+    ...post,
+    excerpt: post.body ? await generateExcerpt(post.body) : '',
+  }))
+);
 ---
 
 <BaseLayout>
@@ -29,7 +38,7 @@ const posts = await getCollection('blog');
       </p>
     </a>
     {
-      posts.reverse().map((post) => {
+      postsWithExcerpts.reverse().map((post) => {
         const { slug } = post.data;
         return (
           <a href={`/blog/${slug}`}>
@@ -41,7 +50,7 @@ const posts = await getCollection('blog');
                   {new Date(post.data.date).toISOString().slice(0, 10)}
                 </p>
               </div>
-              <p>{post.data.excerpt}</p>
+              <p set:html={post.excerpt} />
               <p class='text-sm'>Continue Reading...</p>
             </div>
           </a>
