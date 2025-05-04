@@ -1,10 +1,10 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelopeOpen } from 'react-icons/fa';
+import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelopeOpen } from "react-icons/fa";
 
 const ContactMethod = ({ href, text, methodName, children }) => (
   <li className="m-4">
     <a href={href}>
-      <div className="mx-auto flex w-full items-center justify-center border border-gray-400 bg-sage p-2 shadow-lg md:w-1/2">
+      <div className="bg-sage mx-auto flex w-full items-center justify-center border border-gray-400 p-2 shadow-lg md:w-1/2">
         {children}
         {text}
       </div>
@@ -15,7 +15,7 @@ const ContactMethod = ({ href, text, methodName, children }) => (
 
 const Contact = () => (
   <div className="grid items-center">
-    <h3 className="mx-auto w-1/2 self-end border-b-4 border-sage pb-2 text-center text-3xl">
+    <h3 className="border-sage mx-auto w-1/2 self-end border-b-4 pb-2 text-center text-3xl">
       Find Me Here!
     </h3>
     <ul className="text-center text-lg">

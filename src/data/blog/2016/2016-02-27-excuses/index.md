@@ -10,7 +10,7 @@ ones! And lots of interesting things to talk about too, so, in the immortal
 words of Samuel L. Jackson in Jurassic Park, "Hold on to your butts."
 
 First, the excuses. We've been working on a fairly substantial rails project
-this past week. Called *Crowdfunder*, it's a clone of
+this past week. Called _Crowdfunder_, it's a clone of
 [Kickstarter](http://kickstarter.com). We got into groups to tackle it, because
 it really was a substantial assignment. After two late nights at the office,
 things were going well on the project. Which is exactly when a friendly flu
@@ -30,7 +30,7 @@ big task (side note, I can't believe that I'm about to start week 8 of this
 course. But that's a topic for another post.), and I suspect it'll require a lot
 of late nights at Bitmaker, so I want to be 100% for when that starts.
 
-Last Monday, we got to experience *Kitten's Den*, which is like Dragon's Den,
+Last Monday, we got to experience _Kitten's Den_, which is like Dragon's Den,
 but less intimidating. In the words of our instructor Mina, "We're here to tell
 you whether your idea is awesome, or too awesome." So really not intimidating at
 all. Anyone who wanted to (most people in the class ended up presenting

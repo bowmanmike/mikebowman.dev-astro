@@ -33,47 +33,47 @@ repository that lives on Github. You have to manually sync them up, but it's
 simple to manage, once you figure it out. Github works by keeping the "official"
 version of your code on its own servers, leaving you free to mess around without
 worrying about breaking your production code. As you write code, you'll
-```commit``` your changes on your local repository, and then ```push``` them to
+`commit` your changes on your local repository, and then `push` them to
 the remote repository when you're finished. Generally you don't need to be
 pushing your code every time you commit. Generally, I push at the end of the
 day, when I finish a particular feature/thing I'd been working on, or when
 someone I'm collaborating with needs to see the code I've written. The opposite
-of push, naturally, is ```pull```. Pulling means asking the remote repo for the
+of push, naturally, is `pull`. Pulling means asking the remote repo for the
 most recent version of the "official" code, and adding it to your local repo.
 
 So how do you actually do all this? The first step, if you haven't done it
 already, is to create an account on [github.com](https://github.com). It's free,
 unless you want to pay, and you should do it. Then, navigate to the directory
 for a project that you want to put online. From the main directory of that
-project, in your command line, type ```git init```. This creates a new git repo
+project, in your command line, type `git init`. This creates a new git repo
 in the current directory. You can see it worked by checking to see if there's a
-directory within your current directory called *.git*. It's a hidden directory
+directory within your current directory called _.git_. It's a hidden directory
 so you might need to do some snooping to actually see if it's there, but if you
 did the command line crash course linked above, you'll know what to do.
 
 So now you've got an empty git repo in your project directory. You want to make
-a first commit. Simple enough. It's a good idea first to type ```git status```.
+a first commit. Simple enough. It's a good idea first to type `git status`.
 This command will show you all the status (duh) of your repo. It generally lists
 files that it either doesn't know about, or that have changed since you last
 committed. If git doesn't know about the files, or they've changed since the
 last commit, they'll be listed in red. If git's tracking the files already, but
-they've changed, it'll be in green. Next, type ```git add .```. Yes, including
+they've changed, it'll be in green. Next, type `git add .`. Yes, including
 the period. This tells git to start tracking all the files in the directory. If
-you want to track specific files only, you can type ```git add <filename>```,
+you want to track specific files only, you can type `git add <filename>`,
 it'll select the files you tell it.
 
 The next step is to commit those changes. Commit is kinda like saving, if that
 makes things clearer. So, you've done some work, added the files to git, and now
-you want to commit them. Any guesses how it's done? If you guessed ```git
-commit```, you'd be right. Well, mostly right. A commit needs a commit message.
-So the full command, as you'll usually write it, is ```git commit -m <enter a
-message here>```. If you forget to enter a commit message, you might end up in a
+you want to commit them. Any guesses how it's done? If you guessed `git
+commit`, you'd be right. Well, mostly right. A commit needs a commit message.
+So the full command, as you'll usually write it, is `git commit -m <enter a
+message here>`. If you forget to enter a commit message, you might end up in a
 scary black screen with some writing on it, that doesn't seem to respond to
-anything you do. This is a text editor called *vim*. It's pretty intense, and I
+anything you do. This is a text editor called _vim_. It's pretty intense, and I
 won't talk about it here, but you should do some looking if you're curious. The
 fun thing about vim is that exiting the program is actually not at all intuitive
-if you've never done it before. To exit, press ```ESC```, then type ```:wq```.
-Escape makes sure you're in the right mode to quit, and ```:wq``` saves changes
+if you've never done it before. To exit, press `ESC`, then type `:wq`.
+Escape makes sure you're in the right mode to quit, and `:wq` saves changes
 to the file and exits vim. If you make sure to remember to enter commit
 messages, you won't have to worry about it!
 
@@ -94,10 +94,10 @@ else, it'll make your Github look good!
 
 Finally, we're done working for the day, and so we're ready to push our code to
 the remote repo. If you've sensed the pattern by now, you'll guess that the
-command is ```git push```, or more fully, ```git push origin master```. Don't
-worry too much for now about what ```origin``` and ```master``` are, but they'll
-be important for more advanced git stuff. Basically, ```origin``` refers to a
-particular remote repo, and ```master``` means you're pushing to the main
+command is `git push`, or more fully, `git push origin master`. Don't
+worry too much for now about what `origin` and `master` are, but they'll
+be important for more advanced git stuff. Basically, `origin` refers to a
+particular remote repo, and `master` means you're pushing to the main
 branch, which is something I'll try and cover later on. You may have to enter
 your github name and password, which will determine whether you have access to
 that particular repo, and it'll push your local commits to the github repo.
@@ -113,12 +113,11 @@ you want to showcase on github.
    Setup Guide linked below, it'll tell you all about HTTPS and SSH and stuff
    that I'm not gonna talk about.
 2. Navigate to the root directory of your project using the command line, and
-   type ```git init```.
-3. Begin tracking the entire project with git, using ```git add .```.
-4. Commit the project in it's current state with ```git commit -m <message>```.
-5. Push the project to Github with ```git push origin master```.
+   type `git init`.
+3. Begin tracking the entire project with git, using `git add .`.
+4. Commit the project in it's current state with `git commit -m <message>`.
+5. Push the project to Github with `git push origin master`.
 6. Revel in your github skills as the job offers pour in!
-
 
 **Links**
 

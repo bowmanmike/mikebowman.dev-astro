@@ -51,7 +51,7 @@ common mantra is that programmers are lazy. I guess the two go hand in hand. But
 why would I spend all the time organizing all these boring, repetitive files,
 when someone else (a guy who was 25 at the time, [David Heinemeier
 Hansson](https://en.wikipedia.org/wiki/David_Heinemeier_Hansson)) has done all
-the work already, *and* made it available, free and open source? Rails lets you
+the work already, _and_ made it available, free and open source? Rails lets you
 get straight to the business of building something functional, and get it done
 quickly. I’m sure it’s not a perfect system, but what is?
 

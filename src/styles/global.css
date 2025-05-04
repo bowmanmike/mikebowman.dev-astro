@@ -1,7 +1,7 @@
-@import url('../assets/fonts/stylesheet.css');
+@import url("../assets/fonts/stylesheet.css");
 
 @theme {
-  --font-sans: 'Nunito', sans-serif;
+  --font-sans: "Nunito", sans-serif;
 
   --color-sage: #a8b5a4;
   --color-sage-50: #dae7d6;

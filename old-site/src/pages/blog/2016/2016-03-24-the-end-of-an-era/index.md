@@ -8,16 +8,16 @@ title: The End of an Era
 Alright. Let's see if I can remember how to write. It's been a few weeks since
 I've typed anything that's not code, so I might be a bit rusty. Apologies in
 advance, to those it may offend. Things are winding down here at Bitmaker. Well,
-they are for me and my cohort, the affectionately-titled *TEAM GORT*. We had our
+they are for me and my cohort, the affectionately-titled _TEAM GORT_. We had our
 last day of class on the 11th of March, and we presented our final projects to
 the world at large (or part of it, anyways.) So now we're set loose on the world
 as mostly-fully-formed junior developers. Maybe not the most glamourous title,
 but you gotta start somewhere.
 
 So lets talk about final projects. Mine, as I may have mentioned, was called
-*chortal*. Our original, working title was *Rmmts*, which as a team we became
+_chortal_. Our original, working title was _Rmmts_, which as a team we became
 quite attached to, but, as much as we liked it, it's a pretty terrible name for
-a product. So we landed on *chortal*. It's kinda like a mix between chore and
+a product. So we landed on _chortal_. It's kinda like a mix between chore and
 portal, and it also sounds like a pokemon, so it's got some serious weight
 behind it. For those not in the know, it's an online platform for roommates to
 keep track of household goings-on. Chores, money, messaging, announcements, all

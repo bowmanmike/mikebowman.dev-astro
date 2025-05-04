@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import Seo from '../components/Seo';
+import Seo from "../components/Seo";
 
 const ContactPage = () => (
   <div>
@@ -10,7 +10,7 @@ const ContactPage = () => (
         <h2 className="text-2xl">Get in touch</h2>
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:col-span-2 lg:mt-0">
           <div>
-            <h3 className="text-lg font-medium leading-6">Email</h3>
+            <h3 className="text-lg leading-6 font-medium">Email</h3>
             <dl className="mt-2 text-base text-gray-500">
               <div>
                 <dt className="sr-only">Email</dt>
@@ -21,7 +21,7 @@ const ContactPage = () => (
             </dl>
           </div>
           <div>
-            <h3 className="text-lg font-medium leading-6">Github</h3>
+            <h3 className="text-lg leading-6 font-medium">Github</h3>
             <dl className="mt-2 text-base text-gray-500">
               <div>
                 <dt className="sr-only">Github</dt>
@@ -32,7 +32,7 @@ const ContactPage = () => (
             </dl>
           </div>
           <div>
-            <h3 className="text-lg font-medium leading-6">Instagram</h3>
+            <h3 className="text-lg leading-6 font-medium">Instagram</h3>
             <dl className="mt-2 text-base text-gray-500">
               <div>
                 <dt className="sr-only">Instagram</dt>
@@ -45,7 +45,7 @@ const ContactPage = () => (
             </dl>
           </div>
           <div>
-            <h3 className="text-lg font-medium leading-6">LinkedIn</h3>
+            <h3 className="text-lg leading-6 font-medium">LinkedIn</h3>
             <dl className="mt-2 text-base text-gray-500">
               <div>
                 <dt className="sr-only">LinkedIn</dt>
@@ -58,7 +58,7 @@ const ContactPage = () => (
             </dl>
           </div>
           <div>
-            <h3 className="text-lg font-medium leading-6">Twitter</h3>
+            <h3 className="text-lg leading-6 font-medium">Twitter</h3>
             <dl className="mt-2 text-base text-gray-500">
               <div>
                 <dt className="sr-only">Twitter</dt>

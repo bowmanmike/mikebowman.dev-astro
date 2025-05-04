@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Seo from '../components/Seo';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Seo from "../components/Seo";
 
-import { formatDate } from '../lib/formatDate';
+import { formatDate } from "../lib/formatDate";
 
 const homeSvg = (
   <svg
@@ -70,7 +70,7 @@ const ButtonPlaceholder = ({ content, icon }) => (
   <button
     type="button"
     disabled
-    className="pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 py-2 px-4 text-center shadow-md hover:bg-sage-100 lg:bg-inherit"
+    className="hover:bg-sage-100 pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 px-4 py-2 text-center shadow-md lg:bg-inherit"
   >
     <span className="hidden lg:inline">{content}</span>
     <span className="lg:hidden">{icon}</span>
@@ -81,7 +81,7 @@ const ButtonPlaceholder = ({ content, icon }) => (
 const NavButton = ({ href, content, preIcon, postIcon }) => (
   <Link
     to={href}
-    className="mb-4 inline-block border border-gray-400 py-2 px-4 shadow-md hover:bg-sage-100"
+    className="hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md"
   >
     <p className="flex items-center justify-center">
       {preIcon}
@@ -96,7 +96,7 @@ const BlogPost = ({ data: { post }, pageContext: { prevPost, nextPost } }) => (
     <Seo title={post.frontmatter.title} />
     <article>
       <header className="my-4 py-2 text-center">
-        <h2 className="mx-auto mb-2 border-b-4 border-sage px-6 text-xl lg:w-max lg:text-2xl">
+        <h2 className="border-sage mx-auto mb-2 border-b-4 px-6 text-xl lg:w-max lg:text-2xl">
           {post.frontmatter.title}
         </h2>
         <small className="text-base italic">
@@ -139,7 +139,7 @@ const BlogPost = ({ data: { post }, pageContext: { prevPost, nextPost } }) => (
       </header>
       <div
         dangerouslySetInnerHTML={{ __html: post.html }}
-        className="prose prose-sky mx-auto text-justify lg:prose-lg"
+        className="prose prose-sky lg:prose-lg mx-auto text-justify"
       />
     </article>
   </div>

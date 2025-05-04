@@ -1,26 +1,26 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
-import startCase from 'lodash.startcase';
-import { Transition } from '@headlessui/react';
+import React, { useState } from "react";
+import startCase from "lodash.startcase";
+import { Transition } from "@headlessui/react";
 
-const encode = data =>
+const encode = (data) =>
   Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
 
 const ContactForm = () => {
   const [values, setValues] = useState({
-    name: '',
-    email: '',
-    from: '',
-    content: '',
+    name: "",
+    email: "",
+    from: "",
+    content: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const resetForm = () => {
     const newValues = Object.keys(values).reduce((acc, key) => {
-      acc[key] = '';
+      acc[key] = "";
       return acc;
     }, {});
 
@@ -29,7 +29,7 @@ const ContactForm = () => {
 
   function updateValues(e) {
     let { value } = e.target;
-    if (e.target.type === 'number') {
+    if (e.target.type === "number") {
       value = parseInt(e.target.value);
     }
 
@@ -43,18 +43,18 @@ const ContactForm = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...values }),
+    if (process.env.NODE_ENV === "production") {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...values }),
       })
         .then(() => {
           setSubmitting(false);
           setSubmitted(true);
           resetForm();
         })
-        .catch(err => {
+        .catch((err) => {
           setSubmitting(false);
           console.log({ err });
         });
@@ -68,7 +68,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <h2 className="mb-4 max-w-max border-b-4 border-sage pr-8 text-2xl">
+      <h2 className="border-sage mb-4 max-w-max border-b-4 pr-8 text-2xl">
         Get In Touch!
       </h2>
       <Transition
@@ -86,7 +86,7 @@ const ContactForm = () => {
           </p>
           <button
             type="button"
-            className="my-4 border border-gray-400 py-2 px-6 shadow-md"
+            className="my-4 border border-gray-400 px-6 py-2 shadow-md"
             onClick={() => setSubmitted(false)}
           >
             Show me the form again
@@ -112,13 +112,13 @@ const ContactForm = () => {
         >
           <input type="hidden" name="contact" value="contact" />
           <input type="hidden" name="cool-stuff" />
-          {['name', 'email'].map(tag => (
+          {["name", "email"].map((tag) => (
             <label
               htmlFor={tag}
               className="block w-full"
               key={`form-input-${tag}`}
             >
-              <span className="border-b-2 border-sage pr-2">
+              <span className="border-sage border-b-2 pr-2">
                 {startCase(tag)}
               </span>
               <input
@@ -134,7 +134,7 @@ const ContactForm = () => {
             </label>
           ))}
           <label htmlFor="content">
-            <span className="border-b-2 border-sage pr-2">How can I help?</span>
+            <span className="border-sage border-b-2 pr-2">How can I help?</span>
             <textarea
               id="content"
               name="content"
@@ -145,7 +145,7 @@ const ContactForm = () => {
             />
           </label>
           <label>
-            <span className="border-b-2 border-sage pr-2">
+            <span className="border-sage border-b-2 pr-2">
               How did you hear about me?
             </span>
             <select
@@ -153,25 +153,25 @@ const ContactForm = () => {
               onChange={updateValues}
               className="my-2 w-full shadow-md"
             >
-              {['word-of-mouth', 'social-media', 'google', 'none'].map(
-                source => (
+              {["word-of-mouth", "social-media", "google", "none"].map(
+                (source) => (
                   <option value={source} key={`form-select-${source}`}>
-                    {source === 'none'
-                      ? 'Other (Let me know above!)'
+                    {source === "none"
+                      ? "Other (Let me know above!)"
                       : startCase(source)}
                   </option>
-                )
+                ),
               )}
             </select>
           </label>
           <button
             type="submit"
-            className={`mx-auto mt-2 block w-full border border-gray-400 bg-sage-400 py-2 shadow-md md:col-span-2 md:w-1/4 ${
-              submitting ? 'pointer-events-none bg-gray-300' : ''
+            className={`bg-sage-400 mx-auto mt-2 block w-full border border-gray-400 py-2 shadow-md md:col-span-2 md:w-1/4 ${
+              submitting ? "pointer-events-none bg-gray-300" : ""
             }`}
             disabled={submitting}
           >
-            {submitting ? 'Submitting...' : 'Submit'}
+            {submitting ? "Submitting..." : "Submit"}
           </button>
         </form>
       </Transition>

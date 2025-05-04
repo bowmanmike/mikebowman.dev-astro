@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Pagination from '../components/Pagination';
-import Seo from '../components/Seo';
+import Pagination from "../components/Pagination";
+import Seo from "../components/Seo";
 
 const homeSvg = (
   <svg
@@ -20,12 +20,12 @@ const Blog = ({ data, pageContext }) => {
   return (
     <div className="m-4 border border-gray-400 p-2 shadow-md lg:m-0 lg:p-4">
       <Seo title="Blog Posts" />
-      <h2 className="mb-4 max-w-max border-b-4 border-sage pr-8 text-center text-2xl">
+      <h2 className="border-sage mb-4 max-w-max border-b-4 pr-8 text-center text-2xl">
         All Posts
       </h2>
       <Link
         to="/"
-        className="mb-4 block w-full border border-gray-400 py-2 px-4 shadow-md hover:bg-sage-100 md:mx-auto md:w-2/3"
+        className="hover:bg-sage-100 mb-4 block w-full border border-gray-400 px-4 py-2 shadow-md md:mx-auto md:w-2/3"
       >
         <p className="flex items-center justify-center">
           <svg
@@ -47,12 +47,12 @@ const Blog = ({ data, pageContext }) => {
         skip={pageContext.skip}
         base="/blog"
       />
-      {posts.map(post => {
+      {posts.map((post) => {
         const { slug } = post.frontmatter;
         return (
           <Link key={slug} to={`/blog/${slug}`}>
             <div className="p-2 lg:p-4">
-              <div className="max-w-max border-b-2 border-sage pr-8">
+              <div className="border-sage max-w-max border-b-2 pr-8">
                 <p className="text-lg font-medium italic">
                   {post.frontmatter.title}
                 </p>

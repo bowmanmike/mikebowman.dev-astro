@@ -1,5 +1,5 @@
 ---
-title: 'There and Back Again and Back Again and Back Again and Ba...'
+title: "There and Back Again and Back Again and Back Again and Ba..."
 date: 2022-10-21
 slug: there-and-back-again-and-back-again
 published: true

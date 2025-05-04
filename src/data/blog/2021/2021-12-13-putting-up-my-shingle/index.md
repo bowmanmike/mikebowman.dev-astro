@@ -1,5 +1,5 @@
 ---
-title: 'Putting Up My Shingle'
+title: "Putting Up My Shingle"
 date: 2021-12-13
 slug: putting-up-my-shingle
 published: true
@@ -9,10 +9,10 @@ Aaaaaaaaaaand, we're back! Lots of updates, lots of changes, lots of big new
 exciting things to talk about. So grab a beverage of your choice, settle in, and
 lets get down to it. <!-- endexcerpt -->
 
-**SELF MARKETING AHEAD**  If you or anyone you know is in need of some web
+**SELF MARKETING AHEAD** If you or anyone you know is in need of some web
 development, please don't hesitate to reach out! I'm looking for work,
 \#OpenForBusiness, as LinkedIn would put it. You can find me at
-[mike@mikebowman.dev](mailto:mike@mikebowman.dev)  **END SELF MARKETING**
+[mike@mikebowman.dev](mailto:mike@mikebowman.dev) **END SELF MARKETING**
 
 Ok, with that out of the way, lets talk about the biggest and most obvious
 change, this website. I'll have a post in the next little while telling a bit of

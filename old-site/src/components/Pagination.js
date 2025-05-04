@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
 export default function Pagination({
   pageSize,
@@ -17,20 +17,20 @@ export default function Pagination({
     <div className="grid grid-flow-col shadow-md md:mx-auto md:w-2/3">
       <Link
         className={`${
-          !hasPrevPage ? 'pointer-events-none bg-gray-300' : ''
-        } border border-gray-400 py-2 px-4 text-center hover:bg-sage-100`}
+          !hasPrevPage ? "pointer-events-none bg-gray-300" : ""
+        } hover:bg-sage-100 border border-gray-400 px-4 py-2 text-center`}
         disabled={!hasPrevPage}
-        to={`${base}${prevPage > 1 ? `/${prevPage}` : ''}`}
+        to={`${base}${prevPage > 1 ? `/${prevPage}` : ""}`}
       >
         &#8592;<span className="hidden md:inline"> Prev</span>
       </Link>
       {/* TODO: Will need to limit the number of pages shown here eventually. Seems to break on mobile when there's 5+ pages */}
       {Array.from({ length: totalPages }).map((_, i) => (
         <Link
-          to={`${base}${i > 0 ? `/${i + 1}` : ''}`}
+          to={`${base}${i > 0 ? `/${i + 1}` : ""}`}
           key={`page-${i}`}
-          className={`border border-gray-400 py-2 px-4 text-center ${
-            i + 1 === currentPage ? 'bg-sage-100' : ''
+          className={`border border-gray-400 px-4 py-2 text-center ${
+            i + 1 === currentPage ? "bg-sage-100" : ""
           }`}
         >
           {i + 1}
@@ -38,8 +38,8 @@ export default function Pagination({
       ))}
       <Link
         className={`${
-          !hasNextPage ? 'pointer-events-none bg-gray-300' : ''
-        } border border-gray-400 px-4 py-2 text-center hover:bg-sage-100`}
+          !hasNextPage ? "pointer-events-none bg-gray-300" : ""
+        } hover:bg-sage-100 border border-gray-400 px-4 py-2 text-center`}
         disabled={!hasNextPage}
         to={`${base}/${nextPage}`}
       >

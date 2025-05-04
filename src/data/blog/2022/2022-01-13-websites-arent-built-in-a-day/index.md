@@ -29,7 +29,7 @@ Something a little more fancy, a little more tech-y. I wanted to boost my tech
 street-cred, more or less. I figured that the best way to get that done would be
 to build my own site, and host it on my very own domain name. So I went off and
 bought [bowmanmike.com](https://bowmanmike.com). My first choice,
-*mikebowman.com*, was (and still is) owned by a real-estate agent from Dallas,
+_mikebowman.com_, was (and still is) owned by a real-estate agent from Dallas,
 so that one was a no-go. But [bowmanmike.com](https://bowmanmike.com) seemed
 like a solid option.
 
@@ -83,8 +83,8 @@ you to generate a full site ahead of time, and just render out raw HTML (and
 some Javacsript, if you want). This means all you need to host it a static site,
 which has a bunch of benefits when it comes to things like simplicity of
 hosting, deployment, SEO, speed, accessibility... all that good stuff. Browsers
-are *really* good at optimising HTML, and servers and hosting platforms are also
-*really* good at optimising their delivery.
+are _really_ good at optimising HTML, and servers and hosting platforms are also
+_really_ good at optimising their delivery.
 
 However, they can be a bit limited in their functionality. As soon as you need
 to do things like dynamically load data, they lose a lot of their benefits.
@@ -105,14 +105,14 @@ Gatsby lets you build your static site using React, and it uses GraphQL at
 build-time to dynamically generate various pages and pieces of data. When the
 site builds, Gatsby spins up an GraphQL API. In your React components (and a few
 other places, but that's not really important right now), you can define queries
-that run *at build time* against that API. This lets you, for example,
+that run _at build time_ against that API. This lets you, for example,
 dynamically load your blog posts to build an index page with pagination, or a
 preview component. These pages are then rendered to static HTML and served to
 the client just like Jekyll.
 
 Gatsby does sprinkle in some Javascript on the client-side to optimize a few
 things, such as page navigation and image loading, but the key point here is
-that the site works *perfectly well* without Javascript. At it's core, it's a
+that the site works _perfectly well_ without Javascript. At it's core, it's a
 simple HTML and CSS page that the browser renders. No magic, no dynamically
 loading data, just a quick, snappy, browser-native page.
 

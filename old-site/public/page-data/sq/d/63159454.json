@@ -1,1 +1,11 @@
-{"data":{"site":{"siteMetadata":{"title":"Mike Bowman | Full Stack Developer","description":"Mike Bowman","author":"@mikebowman_dev"}}}}
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "title": "Mike Bowman | Full Stack Developer",
+        "description": "Mike Bowman",
+        "author": "@mikebowman_dev"
+      }
+    }
+  }
+}

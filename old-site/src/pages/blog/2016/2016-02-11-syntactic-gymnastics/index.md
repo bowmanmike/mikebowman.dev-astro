@@ -14,8 +14,8 @@ guys](https://blog.newrelic.com/2015/07/07/popular-programming-languages/), or
 It’s currently the only language that runs in ever web browser. This means that
 you–yes, YOU, dear reader, have access to Javascript in all it’s glory. Just try
 it out for a second here. If you’re using Google Chrome as your browser (which
-everyone in the world does, right?), hold down the *Command* and *Option* keys,
-and press “J”. For the Windows folks among us, *CTRL* + *SHIFT* + *J* is the
+everyone in the world does, right?), hold down the _Command_ and _Option_ keys,
+and press “J”. For the Windows folks among us, _CTRL_ + _SHIFT_ + _J_ is the
 equivalent. Something like this should appear on the side or bottom of your
 browser.
 
@@ -24,8 +24,8 @@ browser.
 
 This is the console. It’s the window into the wonderful world of Javascript. Try
 stuff! Google “fun things to do in javascript,” and see what happens. Click in
-the console and type *console.log(“Mike made me do this”)*. Get a little fancier
-and type *alert(“Isn’t this weird?”)*. Fiddle around, it’s a sandbox, you won’t
+the console and type _console.log(“Mike made me do this”)_. Get a little fancier
+and type _alert(“Isn’t this weird?”)_. Fiddle around, it’s a sandbox, you won’t
 break anything. It’s just kinda fun to play with. And where I’ve been spending
 almost all my time for the past week. So you’ve used the console, you’ve played
 with Javascript. “But wait,” you ask, “Mike, I thought you were learning Ruby!
@@ -44,6 +44,7 @@ each program does before you read any further. Ruby on top, Javascript
 underneath.
 
 <span class="image-caption">FizzBuzz in Ruby</span>
+
 ```ruby
 def fizz_buzz
   (1..100).each do |number|
@@ -61,9 +62,10 @@ end
 ```
 
 <span class="image-caption">FizzBuzz in Javascript</span>
+
 ```javascript
 function fizzBuzz() {
-  for(i = 0; i < 101; i++) {
+  for (i = 0; i < 101; i++) {
     if (i % 5 === 0 && i % 3 === 0) {
       console.log("FizzBuzz");
     } else if (i % 5 === 0) {

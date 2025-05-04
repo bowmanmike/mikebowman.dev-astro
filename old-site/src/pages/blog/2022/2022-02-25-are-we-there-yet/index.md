@@ -5,7 +5,7 @@ slug: are-we-there-yet
 published: true
 ---
 
-Are we there yet?  
+Are we there yet?
 
 When I was a kid, my siblings and I needed to find ways to entertain ourselves on
 long car rides. We thought it was fun to "secretly plan" to ask my parents, in
@@ -22,11 +22,11 @@ write about here?
 The truth is, when I left my job to start down this whole freelance path, I had
 a vague sense of how long things might take. I didn't set myself any real hard
 deadlines, and I made sure that I was financially set up to be patient. But as
-with anything, *the best laid schemes o’ mice an’ men. Gang aft a-gley*. Errm.
+with anything, _the best laid schemes o’ mice an’ men. Gang aft a-gley_. Errm.
 Not quite sure what that last bit means. But the gist is clear. No matter how
 well you think you've planned, something will go wrong.
 
-Not that anything has gone particularly *wrong* with my experience so far. I've
+Not that anything has gone particularly _wrong_ with my experience so far. I've
 actually been able to make more connections than I expected I'd be able to,
 without going down paths like cold-emailing businesses or being able to go to
 networking events in-person. I think, if you were to have asked me back in

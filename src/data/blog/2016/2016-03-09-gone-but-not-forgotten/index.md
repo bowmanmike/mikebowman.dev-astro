@@ -10,7 +10,7 @@ much time to fully explain myself right now, because things are just a little
 bit busy these days (actually that's totally a lie. Things are crazy right now).
 We're deep in the midst of working on our final project (codenamed rmmts), an
 app to allow roommates to keep track of chores and finances and stuff. It's a
-fun project, and it's coming together pretty well thus far (knocking on *all*
+fun project, and it's coming together pretty well thus far (knocking on _all_
 the wood).
 
 I can't write a full post right now, but my time at Bitmaker is almost at an

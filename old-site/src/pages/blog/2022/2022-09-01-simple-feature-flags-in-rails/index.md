@@ -19,10 +19,10 @@ scroll to the bottom!
 
 First, what’s a feature flag? I’m sure there’s a proper technical definition,
 but as far as I’m concerned, a feature flag (sometimes called a feature toggle),
-is a mechanism to enable or disable features *on the fly* without deploying
+is a mechanism to enable or disable features _on the fly_ without deploying
 anything new or changing any code. Ideally, you should be able to enable or
 disable a feature instantaneously. Depending on the particular implementation,
-it may not be *quite* that fast, but within seconds-to-minutes, rather than
+it may not be _quite_ that fast, but within seconds-to-minutes, rather than
 minutes-to-hours.
 
 Another important use-case for feature flags is to regulate which of your users
@@ -50,7 +50,7 @@ example, you need to check for the variable in multiple places? What if you need
 to send the feature flag status to a client-side application? What if a flag has
 more complex states than just `on` and `off`?
 
-When I came across this problem, I decided to put together a *slightly* more
+When I came across this problem, I decided to put together a _slightly_ more
 sophisticated system to streamline the process of checking the status of a flag,
 and for distributing that knowledge throughtout an application.
 
@@ -90,7 +90,7 @@ certainly not a requirement of this method.
 For me, the key to this approach is the simplicity of it’s interface. Wherever I
 am in my application, I can call `NewLayoutFeatureFlag.enabled_for_user?` with
 the user ID, and get back whether or not the flag is enabled for that user. The
-Flag itself knows *how* to check whether a particular user should be able to use
+Flag itself knows _how_ to check whether a particular user should be able to use
 a feature. This interface allows the flag code to be as simple or as complex as
 it needs to be. It could do a DB lookup, it could store the state in Redis, or
 perform some work to determine whether or not the flag should be enabled.
@@ -147,7 +147,7 @@ get "/feature_flags/:flag" => "feature_flags#show"
 ```
 
 This kind of architecture makes it simple to add new flags. You could even add a
-`FeatureFlagsController#index` action to return the status of *all* the flags
+`FeatureFlagsController#index` action to return the status of _all_ the flags
 for a current user.
 
 Another important feature of this feature flag design is that the default

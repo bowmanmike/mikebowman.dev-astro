@@ -6,13 +6,13 @@ title: Rails Magic
 
 Rails is magic. There. I said it. And I’m learning how to use it. I had a bit of
 a breakthrough this week. As I may have mentioned previously, Rails is smart. It
-*knows* stuff that it really seems to have no right to know. But it’s also
+_knows_ stuff that it really seems to have no right to know. But it’s also
 surprisingly intuitive. If you know what you want to do, all you have to do is
 type it out. In semi-plain English. Once you work out the normal syntax quirks
 (underscores and colons and the like), everything falls into place. Want to put
-a link somewhere? *link_to*. Where should the link go? The new user page? Easy
-enough. *link_to “New User”, new_user_path*. Done. Need to create a form to
-create a new user? *form_for @user*. Honestly, it’s that easy.
+a link somewhere? _link_to_. Where should the link go? The new user page? Easy
+enough. _link_to “New User”, new_user_path_. Done. Need to create a form to
+create a new user? _form_for @user_. Honestly, it’s that easy.
 
 That’s not to say that Rails is “easy” to learn, because it’s totally not. But
 I’m amazed that with only two weeks of really using the framework, I’ve got two
@@ -54,8 +54,8 @@ it’s important. You may have noticed that I’ve been writing a blog,
 [tweeting](http://twitter.com/mbowman2) from time-to-time, and updating my
 [LinkedIn](https://ca.linkedin.com/in/mike-bowman-81936160) profile, which are
 all part of this “networking.” In person though, as far as I can tell, it means
-“do exactly what I didn’t do at the event on Tuesday night.” *Don’t* sit with
-your friends. *Don’t* be staring at your phone the whole time. *Do* go talk to
+“do exactly what I didn’t do at the event on Tuesday night.” _Don’t_ sit with
+your friends. _Don’t_ be staring at your phone the whole time. _Do_ go talk to
 people you’ve never met before. Yeah, I didn’t do so great at the whole
 networking thing. But there’ll be plenty of opportunities, I’m sure. The event
 itself was interesting though. It was a series of short talks (10–15 minutes)

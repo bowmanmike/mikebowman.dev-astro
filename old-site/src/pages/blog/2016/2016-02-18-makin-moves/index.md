@@ -17,7 +17,7 @@ real-estate agent from Texas, but he didn't think about the inversion, so HAH!
 Take that, Mike Bowman. I thought about going for bikemowman.com, but this
 seemed more professional. Turns out, buying domain names is a pretty painless
 process, and not super expensive. Unless, that is, you're looking at buying a
-super-trendy website that ends in *.io*. bikemowman.io was going for like $45 a
+super-trendy website that ends in _.io_. bikemowman.io was going for like $45 a
 year. I snagged bowmanmike.com for around $15 for the year, which seemed like a
 good deal.
 
@@ -40,7 +40,7 @@ site, I just push all my changes to a github repo ([this
 one](http://github.com/bowmanmike/bowmanmike.github.io)), and the site updates
 automatically. For someone who's been bashed in the face with git repeatedly for
 the past 6 weeks, it's a super straightforward process. Then it's just a matter
-of configuring the domain name to point to the right place, and *voila*, there's
+of configuring the domain name to point to the right place, and _voila_, there's
 your page. Jekyll is cool because it's totally customizable, so once I get a bit
 more free time, I'll be able to change the way the page looks a bit. Seems like
 a good way to practice a bit of front end design and jQuery and stuff.

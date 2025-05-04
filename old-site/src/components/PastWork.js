@@ -1,7 +1,7 @@
-import React from 'react';
-import { FaEnvelopeOpen } from 'react-icons/fa';
+import React from "react";
+import { FaEnvelopeOpen } from "react-icons/fa";
 
-import { jobs } from '../lib/jobs';
+import { jobs } from "../lib/jobs";
 
 const LogoCard = ({ href, baseColour, children }) => {
   const styles = { backgroundColor: baseColour };
@@ -9,7 +9,7 @@ const LogoCard = ({ href, baseColour, children }) => {
     <a href={href}>
       <div
         className={`flex items-center ${
-          baseColour && 'p-2'
+          baseColour && "p-2"
         } h-full max-w-full rounded-md`}
         style={styles}
       >
@@ -47,18 +47,18 @@ const JobSection = ({ job }) => {
           ))}
         </ul>
       </div>
-      <div className="my-4 border-b-2 border-sage" />
+      <div className="border-sage my-4 border-b-2" />
     </>
   );
 };
 
 const PastWork = () => (
   <>
-    <h2 className="mb-4 max-w-max border-b-4 border-sage pr-8 text-2xl">
+    <h2 className="border-sage mb-4 max-w-max border-b-4 pr-8 text-2xl">
       Work Experience
     </h2>
     <div className="pt-2">
-      {jobs.map(job => {
+      {jobs.map((job) => {
         return <JobSection job={job} key={job.company} />;
       })}
     </div>
@@ -69,7 +69,7 @@ const PastWork = () => (
         className="inline-block w-full border border-gray-400 md:ml-4 md:w-max"
       >
         <p className="sr-only">Email Address</p>
-        <p className="flex items-center bg-sage py-2 px-4 text-center text-lg">
+        <p className="bg-sage flex items-center px-4 py-2 text-center text-lg">
           <FaEnvelopeOpen className="mr-2 inline-block" />
           mike@mikebowman.dev
         </p>

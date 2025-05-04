@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 const gql = String.raw;
 
@@ -33,7 +33,7 @@ async function createPosts({ graphql, actions: { createPage } }) {
 
     createPage({
       path: `blog/${slug}`,
-      component: path.resolve('./src/templates/blog-post.js'),
+      component: path.resolve("./src/templates/blog-post.js"),
       context: {
         slug,
         prevPost,
@@ -49,7 +49,7 @@ async function createPosts({ graphql, actions: { createPage } }) {
   Array.from({ length: pageCount }).forEach((_, i) => {
     createPage({
       path: `/blog/${i + 1}`,
-      component: path.resolve('./src/pages/blog.js'),
+      component: path.resolve("./src/pages/blog.js"),
       context: {
         skip: i * pageSize,
         currentPage: i + 1,
@@ -59,6 +59,6 @@ async function createPosts({ graphql, actions: { createPage } }) {
   });
 }
 
-exports.createPages = async params => {
+exports.createPages = async (params) => {
   await Promise.all([createPosts(params)]);
 };

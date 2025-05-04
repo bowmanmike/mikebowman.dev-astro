@@ -1,5 +1,5 @@
-import React from 'react';
-import { SiGatsby, SiTailwindcss, SiNetlify } from 'react-icons/si';
+import React from "react";
+import { SiGatsby, SiTailwindcss, SiNetlify } from "react-icons/si";
 
 const LogoLink = ({ href, baseColour, children }) => {
   const styles = { backgroundColor: baseColour };
@@ -17,15 +17,15 @@ const LogoLink = ({ href, baseColour, children }) => {
 const Footer = () => (
   <footer className="text-md m-4 mx-auto mb-8 p-2 text-center lg:mx-0 lg:p-4">
     <p className="my-2">
-      This site was built by hand with{' '}
+      This site was built by hand with{" "}
       <LogoLink href="https://www.gatsbyjs.com" baseColour="#672ab2">
         <SiGatsby /> GatsbyJS
-      </LogoLink>{' '}
-      and{' '}
+      </LogoLink>{" "}
+      and{" "}
       <LogoLink href="https://www.tailwindcss.com" baseColour="#52b3d1">
         <SiTailwindcss /> TailwindCSS,
-      </LogoLink>{' '}
-      and hosted on{' '}
+      </LogoLink>{" "}
+      and hosted on{" "}
       <LogoLink href="https://www.netlify.com" baseColour="#4caa9f">
         <SiNetlify /> Netlify
       </LogoLink>

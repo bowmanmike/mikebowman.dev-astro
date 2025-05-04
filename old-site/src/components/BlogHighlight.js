@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import React, { useState } from "react";
+import { graphql, useStaticQuery, Link } from "gatsby";
 
-import { formatDate } from '../lib/formatDate';
+import { formatDate } from "../lib/formatDate";
 
 const LATEST_POST_QUERY = graphql`
   query LATEST_POST_QUERY {
@@ -27,7 +27,7 @@ const LATEST_POST_QUERY = graphql`
 const PostPreview = ({ togglePost, post }) => (
   <div>
     <p className="prose prose-lg mx-auto">
-      {post.excerpt}{' '}
+      {post.excerpt}{" "}
       <button
         type="button"
         className="ml-4 text-gray-500 hover:text-gray-700"
@@ -55,7 +55,7 @@ const FullPost = ({ togglePost, post }) => (
       </button>
     </div>
     <Link to="blog" className="">
-      <p className="border border-gray-400 py-2 px-4 text-center shadow-md md:mx-auto md:w-1/2">
+      <p className="border border-gray-400 px-4 py-2 text-center shadow-md md:mx-auto md:w-1/2">
         More Posts!
       </p>
     </Link>
@@ -72,7 +72,7 @@ const BlogHighlight = () => {
 
   return (
     <>
-      <h2 className="mb-4 max-w-max border-b-4 border-sage pr-8 text-2xl">
+      <h2 className="border-sage mb-4 max-w-max border-b-4 pr-8 text-2xl">
         Latest Blog Post
       </h2>
       <div>
@@ -87,7 +87,7 @@ const BlogHighlight = () => {
           </Link>
           <Link
             to="blog"
-            className="mt-4 inline-block h-full w-full border border-gray-400 py-2 px-4 text-center shadow-md md:mt-0 md:w-1/4"
+            className="mt-4 inline-block h-full w-full border border-gray-400 px-4 py-2 text-center shadow-md md:mt-0 md:w-1/4"
           >
             More Posts!
           </Link>

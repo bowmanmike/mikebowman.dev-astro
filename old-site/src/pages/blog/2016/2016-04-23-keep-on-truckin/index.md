@@ -66,7 +66,7 @@ the basic, fundamental concepts of computer science that you don't learn at a
 bootcamp. Things like how does the computer actually allocate memory to
 accomplish tasks. How does an array work, for example. It also covers various
 algorithms used commonly in CS. Ruby is a high-level, developer-friendly,
-abstract language, so it comes with things like a *sort* method. *Sort* takes an
+abstract language, so it comes with things like a _sort_ method. _Sort_ takes an
 array, like `[1, 5, 3, 7, 4, 9]` for example, and sorts them, lowest to
 highest, so you end up with `[1, 3, 4, 5, 7, 9]`. Obviously, this is super
 useful. There's lots of cases where you might want to sort a series of numbers.
@@ -77,9 +77,9 @@ used to teach the course. I learned Ruby and Javascript. Ruby, as I mentioned in
 a previous post, is actually written in another language, called C. C is a
 serious, low-level language. For example, parts of various operating systems are
 written in C. It's a totally different language from Ruby, and that's what they
-use to teach the first portion of cs50. So instead of just using the *sort*
+use to teach the first portion of cs50. So instead of just using the _sort_
 method like in Ruby, the challenge is to actually write a function that can sort
-an array. I'm basically writing the Ruby *sort* method, which is cool. It's fun
+an array. I'm basically writing the Ruby _sort_ method, which is cool. It's fun
 to try to solve programming challenges in such a different environment. I can
 generally figure out pretty easily the steps needed to solve the problem, but
 implementing it is much trickier in C than Ruby.

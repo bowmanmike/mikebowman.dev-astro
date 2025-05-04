@@ -35,7 +35,7 @@ you.
 This:
 
 ```json
-{"name": "Mike", "age": 27, "occupation": "developer", "likesPizza": true}
+{ "name": "Mike", "age": 27, "occupation": "developer", "likesPizza": true }
 ```
 
 Turns into this:
@@ -79,6 +79,7 @@ cat ~/path/to/file.json | jq '.[] | select(.name == "mike")'
 Pretty neat huh?
 
 #### Other Fun JQ Stuff As some of you may know, I'm a fan of Vim (well,
+
 specifically Neovim) for the vast majority of my code editing needs. Vim
 integrates super well with command line tooling like `jq`, so I've got a few
 useful little custom vim functions to manipulate JSON in a sane way. I like to

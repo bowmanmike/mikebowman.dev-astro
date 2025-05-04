@@ -39,8 +39,8 @@ frustrating at times, and it’s an absolute blast. The instructors are
 knowledgeable, the facility is top-notch, my classmates are interesting,
 motivated, and fun folks, and the successes are hugely rewarding. Today I spent
 a long long long time trying to write a little program that would turn words
-into pig-latin. When I finally figured out why it was turning *banana* into
-*anabanay* instead of *ananabay* I may have squealed a little bit. There’s a bit
+into pig-latin. When I finally figured out why it was turning _banana_ into
+_anabanay_ instead of _ananabay_ I may have squealed a little bit. There’s a bit
 more to it than just pig-latin, but you get the picture.
 
 For those who have made it this far (the brave, the few), I’ll touch briefly on

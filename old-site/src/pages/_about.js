@@ -1,7 +1,7 @@
-import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
-import Seo from '../components/Seo';
+import Seo from "../components/Seo";
 
 const AboutPage = () => (
   <div>

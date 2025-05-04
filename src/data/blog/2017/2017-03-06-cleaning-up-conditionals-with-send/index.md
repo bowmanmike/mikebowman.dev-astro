@@ -16,7 +16,7 @@ So I wanna talk a bit about something cool I learned at work a few months back.
 I'd been working with large, somewhat irregular JSON files, and had to parse
 certain values out of the data. The fields would come in different forms,
 sometimes a string, sometimes an array, sometimes a hash. My first attempt at
-solving the issue looked something like this:  
+solving the issue looked something like this:
 
 ```ruby
 if input.is_a?(String)
@@ -36,7 +36,7 @@ but it's ugly and hard to reason about. My boss showed me this cool way of
 handling this kind of issue, which has been a standard in my toolbox ever since
 that day.
 
-First, we define the handler methods we'd need anyways.  
+First, we define the handler methods we'd need anyways.
 
 ```ruby
 def handle_string(input)
@@ -54,7 +54,7 @@ end
 
 Then, we find the class of the `input`, and using a clever combination of the
 `Object#send` method and string interpolation, we call the method dynamically,
-like this.  
+like this.
 
 ```ruby
 input_klass = input.class.to_s.downcase
