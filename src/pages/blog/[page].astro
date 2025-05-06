@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/Base.astro";
-import { generateExcerpt } from "../../utils/excerpt.ts";
+import BlogIndex from "../../components/BlogIndex.astro";
 import { getSortedPosts, SortDirection } from "../../utils/blog.ts";
 
 // Generate paths for all pages
@@ -29,102 +29,12 @@ const currentPage = parseInt(page);
 const startIndex = (currentPage - 1) * postsPerPage;
 const endIndex = startIndex + postsPerPage;
 const paginatedPosts = allPosts.slice(startIndex, endIndex);
-
-// Generate excerpts for each post
-const postsWithExcerpts = await Promise.all(
-  paginatedPosts.map(async (post) => ({
-    ...post,
-    excerpt: post.body ? await generateExcerpt(post.body) : "",
-  })),
-);
 ---
 
 <BaseLayout>
-  <div class="m-4 border border-gray-400 p-2 shadow-md lg:m-0 lg:p-4">
-    <h2 class="border-sage mb-4 max-w-max border-b-4 pr-8 text-center text-2xl">
-      All Posts
-    </h2>
-
-    <!-- Pagination links (top) -->
-    <div class="pagination mb-6 flex justify-center gap-4">
-      {
-        currentPage > 1 && (
-          <a 
-            href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
-            class="border px-3 py-1"
-          >
-            Previous
-          </a>
-        )
-      }
-      <span>Page {currentPage} of {totalPages}</span>
-      {
-        currentPage < totalPages && (
-          <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
-            Next
-          </a>
-        )
-      }
-    </div>
-    <a
-      href="/"
-      class="hover:bg-sage-100 mb-4 block w-full border border-gray-400 px-4 py-2 shadow-md md:mx-auto md:w-2/3"
-    >
-      <p class="flex items-center justify-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="mr-2 h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
-          ></path>
-        </svg>
-        Go Back Home
-      </p>
-    </a>
-    {
-      postsWithExcerpts.map((post) => {
-        const { slug } = post.data;
-        return (
-          <a href={`/blog/${slug}`}>
-            <div class="p-2 lg:p-4">
-              <div class="border-sage max-w-max border-b-2 pr-8">
-                <p class="text-lg font-medium italic">{post.data.title}</p>
-                <p class="italic">
-                  Published{" "}
-                  {new Date(post.data.date).toISOString().slice(0, 10)}
-                </p>
-              </div>
-              <p set:html={post.excerpt} />
-              <p class="text-sm">Continue Reading...</p>
-            </div>
-          </a>
-        );
-      })
-    }
-
-    <!-- Pagination links (bottom) -->
-    <div class="pagination mt-6 flex justify-center gap-4">
-      {
-        currentPage > 1 && (
-          <a 
-            href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
-            class="border px-3 py-1"
-          >
-            Previous
-          </a>
-        )
-      }
-      <span>Page {currentPage} of {totalPages}</span>
-      {
-        currentPage < totalPages && (
-          <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
-            Next
-          </a>
-        )
-      }
-    </div>
-  </div>
+  <BlogIndex 
+    currentPage={currentPage}
+    totalPages={totalPages}
+    posts={paginatedPosts}
+  />
 </BaseLayout>
