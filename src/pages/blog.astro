@@ -8,8 +8,9 @@ const postsPerPage = 10;
 const allPosts = await getSortedPosts(SortDirection.NEWEST_FIRST);
 const totalPages = Math.ceil(allPosts.length / postsPerPage);
 
-// Get current page from URL parameter or default to 1
-const currentPage = parseInt(Astro.url.searchParams.get("page") || "1");
+// Get current page from path parameter or default to 1
+const { page } = Astro.params;
+const currentPage = page ? parseInt(page) : 1;
 const startIndex = (currentPage - 1) * postsPerPage;
 const endIndex = startIndex + postsPerPage;
 const paginatedPosts = allPosts.slice(startIndex, endIndex);
@@ -33,7 +34,10 @@ const postsWithExcerpts = await Promise.all(
     <div class="pagination mb-6 flex justify-center gap-4">
       {
         currentPage > 1 && (
-          <a href={`/blog?page=${currentPage - 1}`} class="border px-3 py-1">
+          <a 
+            href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
+            class="border px-3 py-1"
+          >
             Previous
           </a>
         )
@@ -41,7 +45,7 @@ const postsWithExcerpts = await Promise.all(
       <span>Page {currentPage} of {totalPages}</span>
       {
         currentPage < totalPages && (
-          <a href={`/blog?page=${currentPage + 1}`} class="border px-3 py-1">
+          <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
             Next
           </a>
         )
@@ -90,7 +94,10 @@ const postsWithExcerpts = await Promise.all(
     <div class="pagination mt-6 flex justify-center gap-4">
       {
         currentPage > 1 && (
-          <a href={`/blog?page=${currentPage - 1}`} class="border px-3 py-1">
+          <a 
+            href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
+            class="border px-3 py-1"
+          >
             Previous
           </a>
         )
@@ -98,7 +105,7 @@ const postsWithExcerpts = await Promise.all(
       <span>Page {currentPage} of {totalPages}</span>
       {
         currentPage < totalPages && (
-          <a href={`/blog?page=${currentPage + 1}`} class="border px-3 py-1">
+          <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
             Next
           </a>
         )

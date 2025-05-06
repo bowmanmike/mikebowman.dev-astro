@@ -1,0 +1,25 @@
+---
+// This file handles /blog/2, /blog/3, etc.
+import { getSortedPosts, SortDirection } from "../../utils/blog.ts";
+
+// Pagination settings
+const postsPerPage = 10;
+const allPosts = await getSortedPosts(SortDirection.NEWEST_FIRST);
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+// Generate paths for all pages
+export async function getStaticPaths() {
+  const paths = [];
+  
+  // Start from page 2 since page 1 is handled by /blog
+  for (let i = 2; i <= totalPages; i++) {
+    paths.push({ params: { page: String(i) } });
+  }
+  
+  return paths;
+}
+
+// Redirect to the main blog page
+const { page } = Astro.params;
+return Astro.redirect(`/blog?page=${page}`);
+---
