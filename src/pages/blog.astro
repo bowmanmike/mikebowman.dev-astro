@@ -3,11 +3,20 @@ import BaseLayout from '../layouts/Base.astro';
 import { generateExcerpt } from '../utils/excerpt.ts';
 import { getSortedPosts, SortDirection } from '../utils/blog.ts';
 
-const posts = await getSortedPosts(SortDirection.NEWEST_FIRST);
+// Pagination settings
+const postsPerPage = 10;
+const allPosts = await getSortedPosts(SortDirection.NEWEST_FIRST);
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+// Get current page from URL parameter or default to 1
+const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
+const startIndex = (currentPage - 1) * postsPerPage;
+const endIndex = startIndex + postsPerPage;
+const paginatedPosts = allPosts.slice(startIndex, endIndex);
 
 // Generate excerpts for each post
 const postsWithExcerpts = await Promise.all(
-  posts.map(async (post) => ({
+  paginatedPosts.map(async (post) => ({
     ...post,
     excerpt: post.body ? await generateExcerpt(post.body) : '',
   }))
@@ -19,6 +28,17 @@ const postsWithExcerpts = await Promise.all(
     <h2 class='border-sage mb-4 max-w-max border-b-4 pr-8 text-center text-2xl'>
       All Posts
     </h2>
+    
+    <!-- Pagination links (top) -->
+    <div class="pagination flex justify-center gap-4 mb-6">
+      {currentPage > 1 && (
+        <a href={`/blog?page=${currentPage - 1}`} class="border px-3 py-1">Previous</a>
+      )}
+      <span>Page {currentPage} of {totalPages}</span>
+      {currentPage < totalPages && (
+        <a href={`/blog?page=${currentPage + 1}`} class="border px-3 py-1">Next</a>
+      )}
+    </div>
     <a
       href='/'
       class='hover:bg-sage-100 mb-4 block w-full border border-gray-400 px-4 py-2 shadow-md md:mx-auto md:w-2/3'
@@ -57,5 +77,16 @@ const postsWithExcerpts = await Promise.all(
         );
       })
     }
+    
+    <!-- Pagination links (bottom) -->
+    <div class="pagination flex justify-center gap-4 mt-6">
+      {currentPage > 1 && (
+        <a href={`/blog?page=${currentPage - 1}`} class="border px-3 py-1">Previous</a>
+      )}
+      <span>Page {currentPage} of {totalPages}</span>
+      {currentPage < totalPages && (
+        <a href={`/blog?page=${currentPage + 1}`} class="border px-3 py-1">Next</a>
+      )}
+    </div>
   </div>
 </BaseLayout>
