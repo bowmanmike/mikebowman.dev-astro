@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/Base.astro';
-import { render } from 'astro:content';
-import { getSortedPosts, SortDirection } from '../../utils/blog.ts';
+import BaseLayout from "../../layouts/Base.astro";
+import { render } from "astro:content";
+import { getSortedPosts, SortDirection } from "../../utils/blog.ts";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -24,11 +24,11 @@ const { Content } = await render(post);
 
 const d = new Date(post.data.date);
 
-const date = d.toLocaleString('en-CA', {
-  month: 'long',
-  year: 'numeric',
-  day: 'numeric',
-  timeZone: 'UTC',
+const date = d.toLocaleString("en-CA", {
+  month: "long",
+  year: "numeric",
+  day: "numeric",
+  timeZone: "UTC",
 });
 
 const homeSvg = `<svg
@@ -80,59 +80,59 @@ const nextSvg = `
 ---
 
 <BaseLayout>
-  <div class='m-4 border border-gray-400 p-2 shadow-md lg:m-0 lg:p-4'>
+  <div class="m-4 border border-gray-400 p-2 shadow-md lg:m-0 lg:p-4">
     <article>
-      <header class='my-4 py-2 text-center'>
+      <header class="my-4 py-2 text-center">
         <h2
-          class='border-sage mx-auto mb-2 border-b-4 px-6 text-xl lg:w-max lg:text-2xl'
+          class="border-sage mx-auto mb-2 border-b-4 px-6 text-xl lg:w-max lg:text-2xl"
         >
           {post.data.title}
         </h2>
-        <small class='text-base italic'>
+        <small class="text-base italic">
           Published on {date}
         </small>
         <nav
-          class='mx-auto mt-8 grid grid-cols-4 gap-2 lg:w-3/4 lg:grid-cols-2'
+          class="mx-auto mt-8 grid grid-cols-4 gap-2 lg:w-3/4 lg:grid-cols-2"
         >
           <a
-            href='/'
-            class='hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md'
+            href="/"
+            class="hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md"
           >
-            <p class='flex items-center justify-center'>
+            <p class="flex items-center justify-center">
               <Fragment set:html={homeSvg} />
-              <span class='hidden lg:inline'>Go Back Home</span>
+              <span class="hidden lg:inline">Go Back Home</span>
             </p>
           </a>
           <a
-            href='/blog'
-            class='hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md'
+            href="/blog"
+            class="hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md"
           >
-            <p class='flex items-center justify-center'>
+            <p class="flex items-center justify-center">
               <Fragment set:html={bookSvg} />
-              <span class='hidden lg:inline'>Back to All Posts</span>
+              <span class="hidden lg:inline">Back to All Posts</span>
             </p>
           </a>
           {
             prevPost ? (
               <a
                 href={`/blog/${prevPost.id}`}
-                class='hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md'
+                class="hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md"
               >
-                <p class='flex items-center justify-center'>
+                <p class="flex items-center justify-center">
                   <Fragment set:html={prevSvg} />
-                  <span class='hidden lg:inline'>{prevPost.data.title}</span>
+                  <span class="hidden lg:inline">{prevPost.data.title}</span>
                 </p>
               </a>
             ) : (
               <button
-                type='button'
+                type="button"
                 disabled
-                class='hover:bg-sage-100 pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 px-4 py-2 text-center shadow-md lg:bg-inherit'
+                class="hover:bg-sage-100 pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 px-4 py-2 text-center shadow-md lg:bg-inherit"
               >
-                <span class='lg:hidden'>
+                <span class="lg:hidden">
                   <Fragment set:html={prevSvg} />
                 </span>
-                <span class='hidden lg:inline'>
+                <span class="hidden lg:inline">
                   Woah! You found the oldest post
                 </span>
               </button>
@@ -142,31 +142,31 @@ const nextSvg = `
             nextPost ? (
               <a
                 href={`/blog/${nextPost.id}`}
-                class='hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md'
+                class="hover:bg-sage-100 mb-4 inline-block border border-gray-400 px-4 py-2 shadow-md"
               >
-                <p class='flex items-center justify-center'>
-                  <span class='hidden lg:inline'>{nextPost.data.title}</span>
+                <p class="flex items-center justify-center">
+                  <span class="hidden lg:inline">{nextPost.data.title}</span>
                   <Fragment set:html={nextSvg} />
                 </p>
               </a>
             ) : (
               <button
-                type='button'
+                type="button"
                 disabled
-                class='hover:bg-sage-100 pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 px-4 py-2 text-center shadow-md lg:bg-inherit'
+                class="hover:bg-sage-100 pointer-events-none mb-4 inline-block border border-gray-400 bg-gray-300 px-4 py-2 text-center shadow-md lg:bg-inherit"
               >
-                <span class='lg:hidden'>
+                <span class="lg:hidden">
                   <Fragment set:html={nextSvg} />
                 </span>
-                <span class='hidden lg:inline'>
+                <span class="hidden lg:inline">
                   This is the most recent post!
                 </span>
-                <span class='sr-only'>This is the most recent post!</span>
+                <span class="sr-only">This is the most recent post!</span>
               </button>
             )
           }
         </nav>
-        <div class='prose prose-sky lg:prose-lg mx-auto text-justify'>
+        <div class="prose prose-sky lg:prose-lg mx-auto text-justify">
           <Content />
         </div>
       </header>
