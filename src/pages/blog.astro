@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/Base.astro';
 import { generateExcerpt } from '../utils/excerpt.ts';
 import { getSortedPosts, SortDirection } from '../utils/blog.ts';
 
-const posts = await getSortedPosts(SortDirection.OLDEST_FIRST);
+const posts = await getSortedPosts(SortDirection.NEWEST_FIRST);
 
 // Generate excerpts for each post
 const postsWithExcerpts = await Promise.all(
