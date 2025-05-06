@@ -1,5 +1,6 @@
 ---
 import { generateExcerpt } from "../utils/excerpt.ts";
+import Pagination from "./Pagination.astro";
 
 // Define the props interface
 interface Props {
@@ -24,27 +25,6 @@ const postsWithExcerpts = await Promise.all(
     All Posts
   </h2>
 
-  <!-- Pagination links (top) -->
-  <div class="pagination mb-6 flex justify-center gap-4">
-    {
-      currentPage > 1 && (
-        <a 
-          href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
-          class="border px-3 py-1"
-        >
-          Previous
-        </a>
-      )
-    }
-    <span>Page {currentPage} of {totalPages}</span>
-    {
-      currentPage < totalPages && (
-        <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
-          Next
-        </a>
-      )
-    }
-  </div>
   <a
     href="/"
     class="hover:bg-sage-100 mb-4 block w-full border border-gray-400 px-4 py-2 shadow-md md:mx-auto md:w-2/3"
@@ -63,6 +43,11 @@ const postsWithExcerpts = await Promise.all(
       Go Back Home
     </p>
   </a>
+
+  <!-- Pagination at the top -->
+  <div class="mb-6">
+    <Pagination currentPage={currentPage} totalPages={totalPages} base="/blog" />
+  </div>
   {
     postsWithExcerpts.map((post) => {
       const { slug } = post.data;
@@ -84,25 +69,8 @@ const postsWithExcerpts = await Promise.all(
     })
   }
 
-  <!-- Pagination links (bottom) -->
-  <div class="pagination mt-6 flex justify-center gap-4">
-    {
-      currentPage > 1 && (
-        <a 
-          href={currentPage === 2 ? `/blog` : `/blog/${currentPage - 1}`} 
-          class="border px-3 py-1"
-        >
-          Previous
-        </a>
-      )
-    }
-    <span>Page {currentPage} of {totalPages}</span>
-    {
-      currentPage < totalPages && (
-        <a href={`/blog/${currentPage + 1}`} class="border px-3 py-1">
-          Next
-        </a>
-      )
-    }
+  <!-- Pagination at the bottom -->
+  <div class="mt-6">
+    <Pagination currentPage={currentPage} totalPages={totalPages} base="/blog" />
   </div>
 </div>

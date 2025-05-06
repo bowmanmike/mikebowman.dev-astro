@@ -1,0 +1,44 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  base: string;
+}
+
+const { currentPage, totalPages, base } = Astro.props;
+const prevPage = currentPage - 1;
+const nextPage = currentPage + 1;
+const hasNextPage = nextPage <= totalPages;
+const hasPrevPage = prevPage >= 1;
+---
+
+<div class="grid grid-flow-col shadow-md md:mx-auto md:w-2/3">
+  <a
+    class={`${
+      !hasPrevPage ? "pointer-events-none bg-gray-300" : ""
+    } hover:bg-sage-100 border border-gray-400 px-4 py-2 text-center`}
+    href={hasPrevPage ? `${base}${prevPage > 1 ? `/${prevPage}` : ""}` : "#"}
+  >
+    &#8592;<span class="hidden md:inline"> Prev</span>
+  </a>
+  {
+    Array.from({ length: totalPages }).map((_, i) => (
+      <a
+        href={`${base}${i > 0 ? `/${i + 1}` : ""}`}
+        class={`border border-gray-400 px-4 py-2 text-center ${
+          i + 1 === currentPage ? "bg-sage-100" : ""
+        }`}
+      >
+        {i + 1}
+      </a>
+    ))
+  }
+  <a
+    class={`${
+      !hasNextPage ? "pointer-events-none bg-gray-300" : ""
+    } hover:bg-sage-100 border border-gray-400 px-4 py-2 text-center`}
+    href={hasNextPage ? `${base}/${nextPage}` : "#"}
+  >
+    <span class="hidden md:inline">Next </span>&#8594;
+  </a>
+</div>
