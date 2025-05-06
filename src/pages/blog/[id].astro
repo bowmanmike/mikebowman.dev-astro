@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/Base.astro';
 import { render } from 'astro:content';
-import { getSortedPostsChronological } from '../../utils/blog.ts';
+import { getSortedPosts, SortDirection } from '../../utils/blog.ts';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const publishedPosts = await getSortedPostsChronological();
+  const publishedPosts = await getSortedPosts(SortDirection.OLDEST_FIRST);
 
   return publishedPosts.map((post, idx) => ({
     params: { id: post.id },
