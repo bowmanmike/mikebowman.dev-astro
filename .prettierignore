@@ -1,0 +1,4 @@
+# Aider related files
+.aider*
+aider-*
+.aider/
