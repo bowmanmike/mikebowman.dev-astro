@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
 import { generateExcerpt } from '../utils/excerpt.ts';
+import { getSortedPostsChronological } from '../utils/blog.ts';
 
-const posts = await getCollection('blog');
+const posts = await getSortedPostsChronological();
 
 // Generate excerpts for each post
 const postsWithExcerpts = await Promise.all(
@@ -38,7 +38,7 @@ const postsWithExcerpts = await Promise.all(
       </p>
     </a>
     {
-      postsWithExcerpts.reverse().map((post) => {
+      postsWithExcerpts.map((post) => {
         const { slug } = post.data;
         return (
           <a href={`/blog/${slug}`}>
