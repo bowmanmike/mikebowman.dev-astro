@@ -3,11 +3,9 @@ import BaseLayout from "../../layouts/Base.astro";
 import { generateExcerpt } from "../../utils/excerpt.ts";
 import { getSortedPosts, SortDirection } from "../../utils/blog.ts";
 
-// Pagination settings
-const postsPerPage = 10;
-
 // Generate paths for all pages
 export async function getStaticPaths() {
+  const postsPerPage = 10;
   const allPosts = await getSortedPosts(SortDirection.NEWEST_FIRST);
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
   
@@ -17,7 +15,7 @@ export async function getStaticPaths() {
   for (let i = 2; i <= totalPages; i++) {
     paths.push({ 
       params: { page: String(i) },
-      props: { allPosts, totalPages }
+      props: { allPosts, totalPages, postsPerPage }
     });
   }
   
@@ -25,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 // Get data from props and params
-const { allPosts, totalPages } = Astro.props;
+const { allPosts, totalPages, postsPerPage } = Astro.props;
 const { page } = Astro.params;
 const currentPage = parseInt(page);
 const startIndex = (currentPage - 1) * postsPerPage;
