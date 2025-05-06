@@ -8,9 +8,8 @@ const postsPerPage = 10;
 const allPosts = await getSortedPosts(SortDirection.NEWEST_FIRST);
 const totalPages = Math.ceil(allPosts.length / postsPerPage);
 
-// Get current page from path parameter or default to 1
-const { page } = Astro.params;
-const currentPage = page ? parseInt(page) : 1;
+// First page of posts
+const currentPage = 1;
 const startIndex = (currentPage - 1) * postsPerPage;
 const endIndex = startIndex + postsPerPage;
 const paginatedPosts = allPosts.slice(startIndex, endIndex);
