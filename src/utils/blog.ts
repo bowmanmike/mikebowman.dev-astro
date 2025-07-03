@@ -1,11 +1,11 @@
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
 /**
  * Sort direction for blog posts
  */
 export enum SortDirection {
-  NEWEST_FIRST = "newest_first",
-  OLDEST_FIRST = "oldest_first",
+  NEWEST_FIRST = 'newest_first',
+  OLDEST_FIRST = 'oldest_first',
 }
 
 /**
@@ -15,7 +15,7 @@ export enum SortDirection {
 export async function getSortedPosts(
   direction: SortDirection = SortDirection.NEWEST_FIRST,
 ) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection('blog');
 
   const filteredPosts = posts.filter((post) => post.data.published);
 
